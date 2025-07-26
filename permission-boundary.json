@@ -1,0 +1,19 @@
+{
+    "Version": "2012-10-17",
+    "Statement": [
+      {
+        "Sid": "ZeroTrustBoundary",
+        "Effect": "Allow",
+        "Action": "*",
+        "Resource": "*",
+        "Condition": {
+          "StringEqualsIfExists": {
+            "aws:RequestedRegion": "us-east-1"
+          },
+          "BoolIfExists": {
+            "aws:ViaAWSService": "true"
+          }
+        }
+      }
+    ]
+  }
